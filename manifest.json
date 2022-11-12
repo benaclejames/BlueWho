@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "BlueWho",
+  "version": "1.0",
+  "description": "Removes Twitter Blue verification checkmarks",
+  "icons": {
+    "128": "assets/icon128.png",
+    "512": "assets/icon512.png"
+  },
+  "content_scripts": [{
+    "matches": [
+      "https://twitter.com/*"
+    ],
+    "js": ["scripts/contentScript.js"],
+    "all_frames": true,
+    "run_at": "document_start"
+  }],
+  "web_accessible_resources": [{
+    "resources": ["scripts/getReactProps.js"],
+    "matches": ["https://twitter.com/*"]
+  }]
+}
